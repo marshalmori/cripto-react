@@ -25,6 +25,10 @@ const InputSubmit = styled.input`
 const Formulario = () => {
   const [cripto, setCripto] = useState([]);
   const [moneda, SelectMonedas] = useSelectMonedas("Escolha a Moeda", monedas);
+  const [criptomoneda, SelectCriptomonedas] = useSelectMonedas(
+    "Escolha a Criptomoeda",
+    cripto
+  );
 
   useEffect(() => {
     const consultarAPI = async () => {
@@ -50,6 +54,7 @@ const Formulario = () => {
   return (
     <form>
       <SelectMonedas />
+      <SelectCriptomonedas />
 
       <InputSubmit type="submit" value="Fazer Cotação" />
     </form>
